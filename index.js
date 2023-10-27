@@ -1,6 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+const slugify = require('slugify');
 const replaceTemplate = require('./modules/replaceTemplate');
 
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'utf-8');
@@ -12,6 +13,9 @@ const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
     const { query, pathname } = url.parse(req.url, true);
+
+    //const slugs = dataObj.map(el => slugify(el.productName, { lower: true }));
+    //console.log(slugs);
 
     // Overview page
     if (pathname === '/' || pathname === '/overview') {
