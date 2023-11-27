@@ -9,7 +9,7 @@ This is a simple web application that displays a list of products and their deta
 - Node.js installed
 - NPM installed
 
-## How to run use
+## How to use
 
 - Clone the repository
 - Go to the project directory
